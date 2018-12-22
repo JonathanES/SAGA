@@ -15,10 +15,20 @@ function *handleGame(){
         for (let i = 0; i < spawnNumber; i++)  
             yield put({type: "TARGET_ADD_REQUESTED"});
         if (lives <= 0){
-            yield put({type: "GAME_STOP_REQUESTED"});
+            yield put({type: "GAME_OVER_REQUESTED"});
         }
+        else {
+            yield put({ type: 'TARGET_DECREMENT_REQUESTED'});
+        }
+
     }
 }
+
+function* handleGameOver(){
+    yield put({type: "GAME_STOP_REQUESTED"});
+    yield put({type: "GAME_OVER"})
+}
+
 function* handleStop(){
     yield put({type: "GAME_STOP"});
     yield put({type: "RESET"});
@@ -31,6 +41,7 @@ function* handleDifficulty(action){
 function *gameSaga(){
     yield takeEvery('GAME_START_REQUESTED', handleGame);
     yield takeEvery('GAME_STOP_REQUESTED', handleStop);
+    yield takeEvery('GAME_OVER_REQUESTED', handleGameOver);
     yield takeEvery('GAME_CHANGE_DIFFICULTY_REQUESTED', handleDifficulty);
 }
 
