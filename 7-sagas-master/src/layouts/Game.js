@@ -58,7 +58,6 @@ const GameLayout = ({ isStarted, lives, score, highScore, dispatch, list, diffic
         <div style={{marginBottom: '20px'}}>Current score: {lastScore}</div>
         <div style={{marginBottom: '20px'}}>HighScore: {highScore}</div>
         <button onClick={() => dispatch({ type: 'GAME_START_REQUESTED' })} style={{
-          fontSize: '32px',
           fontStyle: 'italic',
           textAlign: 'center',
           cursor: 'pointer',
