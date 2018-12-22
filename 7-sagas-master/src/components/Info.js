@@ -13,9 +13,9 @@ const Info = ({ lives, score, highScore, dispatch }) => (
       textAlign: 'right'
     }}
   >
-    <div>{lives} ❤️</div>
-    <div>{score} 🥇</div>
-    <div>{highScore} 🏆</div>
+    <div>{lives} <span role ="img" aria-label="heart"> ❤️</span></div>
+    <div>{score} <span role ="img" aria-label="medal">🥇</span></div>
+    <div>{highScore}<span role ="img" aria-label="cup"> 🏆</span></div>
     <ButtonStop onClick={() => dispatch({ type: 'GAME_STOP_REQUESTED'})}/>
   </div>
 );

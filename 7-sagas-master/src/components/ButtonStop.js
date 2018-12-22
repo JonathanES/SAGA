@@ -4,7 +4,6 @@ const ButtonStop = ({ onClick = () => {} }) => (
   <div
     style={{
       margin: 'auto',
-      fontSize: '32px',
       fontStyle: 'italic',
       textAlign: 'center',
       cursor: 'pointer',

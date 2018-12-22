@@ -13,6 +13,8 @@ const Difficulty = ({ dispatch, color_1,color_2,color_3 }) => {
       case "3":
         dispatch({ type: 'GAME_CHANGE_DIFFICULTY_REQUESTED', difficulty: 3 });
         break;
+      default:
+      break;
     }
 
   }
